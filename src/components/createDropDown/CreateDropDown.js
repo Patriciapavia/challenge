@@ -35,6 +35,18 @@ const CreateDropDown = ({ options, prompt, value, onChange }) => {
 			<div className='dropdown'>
 				<div className='control' onClick={() => setOpen((prev) => !prev)}>
 					<div className='selected-value'>
+						{value ? (
+							<label className='flag-icon'>
+								<ReactCountryFlag
+									countryCode={`${value.alpha2Code}`}
+									svg
+									cdnUrl='https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/flags/1x1/'
+									cdnSuffix='svg'
+									title={`${value.alpha2Code}`}
+								/>
+							</label>
+						) : null}
+
 						<input
 							ref={ref}
 							value={displayValue()}
@@ -46,11 +58,11 @@ const CreateDropDown = ({ options, prompt, value, onChange }) => {
 							placeholder={value ? value.name : open ? 'Search' : prompt}
 						/>
 					</div>
-					<div
-						className='arrow'
-						className={`arrow ${open ? 'open' : null}`}
-					></div>
 				</div>
+				<div
+					className='arrow'
+					className={`arrow ${open ? 'open' : null}`}
+				></div>
 				<div className='options' className={`options ${open ? 'open' : null}`}>
 					{filter(options).map((option) => (
 						<React.Fragment>
@@ -63,13 +75,15 @@ const CreateDropDown = ({ options, prompt, value, onChange }) => {
 									setOpen(false);
 								}}
 							>
-								<ReactCountryFlag
-									countryCode={`${option.alpha2Code}`}
-									svg
-									cdnUrl='https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/flags/1x1/'
-									cdnSuffix='svg'
-									title={`${option.alpha2Code}`}
-								/>
+								<label className='flag-icon'>
+									<ReactCountryFlag
+										countryCode={`${option.alpha2Code}`}
+										svg
+										cdnUrl='https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/flags/1x1/'
+										cdnSuffix='svg'
+										title={`${option.alpha2Code}`}
+									/>
+								</label>
 								{option.name}
 							</div>
 						</React.Fragment>
