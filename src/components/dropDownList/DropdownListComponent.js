@@ -21,47 +21,7 @@ const DropdownListComponent = () => {
 					<div className='item'>
 						<CreateDropDown
 							options={countries}
-							prompt='Select countries'
-							value={value}
-							onChange={(val) => setValue(val)}
-						/>
-					</div>
-					<div className='item'>
-						<CreateDropDown
-							options={countries}
-							prompt='Select countries'
-							value={value}
-							onChange={(val) => setValue(val)}
-						/>
-					</div>
-					<div className='item'>
-						<CreateDropDown
-							options={countries}
-							prompt='Select countries'
-							value={value}
-							onChange={(val) => setValue(val)}
-						/>
-					</div>
-					<div className='item'>
-						<CreateDropDown
-							options={countries}
-							prompt='Select countries'
-							value={value}
-							onChange={(val) => setValue(val)}
-						/>
-					</div>
-					<div className='item'>
-						<CreateDropDown
-							options={countries}
-							prompt='Select countries'
-							value={value}
-							onChange={(val) => setValue(val)}
-						/>
-					</div>
-					<div className='item'>
-						<CreateDropDown
-							options={countries}
-							prompt='Select countries'
+							prompt='Select'
 							value={value}
 							onChange={(val) => setValue(val)}
 						/>
